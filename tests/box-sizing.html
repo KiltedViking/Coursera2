@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <title>Box sizing - Kilted Viking</title>
+  <!-- CAN'T include Bootstrap in this example as it "resets" box-sizing to border-box... -->
+  <!-- Latest compiled and minified CSS -->
+  <!--<link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
+    crossorigin="anonymous">-->
+  <!-- Optional theme -->
+  <!--<link rel="stylesheet" 
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" 
+    integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" 
+    crossorigin="anonymous">-->
+  <!-- Site's stylesheet -->
+  <link rel="stylesheet" href="../stylesheets/kiltedviking.css">
+  <style>
+    /* Remove terrible font Times + set width and center page */
+    .container {
+      font-family: Arial, Helvetica, sans-serif;
+      
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .col-md-6 {
+      width: 50%;
+      min-width: 325px;
+      box-sizing: border-box;
+      float: left;
+    }
+    footer {
+      clear: both;
+      margin-top: 50px;
+      border-top: solid 1px gray;
+      text-align: center;
+      font-size: .8em;
+    }
+    /* Common properties for all boxes */
+    .box {
+      width: 300px;
+      border: solid 3px black;
+      padding: 10px;
+      background-color: lightcoral;
+    }
+    /* The two different box sizing settings */
+    .box-content-box {
+      box-sizing: content-box; /* Default; "unset" by Bootstrap */
+    }
+    .box-border-box {
+      box-sizing: border-box;
+    }
+    /* Make paragraphs show against their containers background */
+    .box>p {
+      background-color: lightgreen;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="row">
+      <div class="col-md-12">
+        <h1>Box sizing - Kilted Viking</h1>
+        <p>Example showing difference between box sizing settings: <code>content-box</code> 
+          (standard) and <code>border-box</code>.</p>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="box">
+          <p>standard</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est facilis molestiae vero perspiciatis quaerat.</p>
+        </div>
+        
+        <div class="box box-content-box">
+          <p>content-box</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, harum, sapiente. </p>
+        </div>
+
+        <div class="box box-border-box">
+          <p>border-box</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus, harum, sapiente. </p>
+        </div>
+      </div>
+      
+      <div class="col-md-6">
+        <p>Using box sizing <code>border-box</code> makes it easier to design pages as
+          sizes are given for elements actual size, i.e. including margin, border and padding.</p>
+          
+        <p>As an example, these two columns where created by setting box sizing to 
+          <code>border-box</code> and setting witdh of columns to 50%.</p>
+
+        <p>TODO: Fix ugly bit where there is no space between left column and footer.</p>
+      </div>
+    </div>
+
+    <footer class="row">
+      <div class="col-md-12">
+        <p><a href="./">Back</a> to Tests</p>
+        <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-11-06.</p>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
+    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
+    crossorigin="anonymous"></script>
+</body>
+</html>

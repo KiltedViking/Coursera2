@@ -1,0 +1,17 @@
+body {
+  color: white;
+  background-color: #800000;
+}
+
+.container {
+  color: black;
+  background-color: white;
+  border-radius: 20px;
+  padding: 0 20px;
+}
+
+footer {
+  border-top: solid 1px gray;
+  text-align: center;
+  font-size: .8em;
+}
