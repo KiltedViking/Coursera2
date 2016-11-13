@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scope - JavaScript</title>
+</head>
+<body>
+  <h1>Scope - JavaScript</h1>
+  <p>This examples shows that scope depends on where things are defined.</p>
+  
+  <p>In this example the function <code>funcB()</code> is defined in global scope, so when
+    calling it in function <code>funcA()</code>, the outer scope for <code>funcB()</code>
+    is the global scope and <b>not</b> <code>funcA()</code>!</p>
+
+  <p>Function <code>funcC()</code>, on the other hand, is defined within function
+    <code>funcA()</code>, so outer scope of <code>funcC()</code> is scope of function
+    <code>funcA()</code>.</p>
+
+  <footer>
+    <p><a href="./">Back</a> to Tests</p>
+    <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-11-13.</p>
+  </footer>
+
+  <script>
+    var message = "Outer message";  //Global scope
+
+    function funcA() {
+      var message = "Inner message";  //Scope of funcA()
+
+      function funcC() {
+        console.log("Output of message in funcC: ", message);
+      }
+
+      funcB();  //Calling function in global scope
+      funcC();  //Calling function in scope of funcA()
+    }
+
+    function funcB() {
+      console.log("Output of message in funcB: ", message);
+    }
+    
+    funcA();
+  </script>
+</body>
+</html>

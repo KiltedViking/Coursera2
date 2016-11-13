@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <h1>this keyword</h1>
+  <p>Example showing the meaning of keyword <code>this</code> and why using constructor
+    functions and <code>prototype</code> is a good idea</p>
+
+  <pre>Right-click in page and choose View soruce or Inspect to view code.</pre>
+
+  <footer>
+    <p><a href="./">Back</a> to Tests</p>
+    <p><b>Created by:</b> Bj&ouml;rn G. D. Persson. <b>Updated:</b> 2016-11-13.</p>
+  </footer>
+
+  <script>
+    //this in an ordinary function is scope of defining context
+    function Something() {
+      console.log(this);
+    }
+
+    Something();
+
+    /*** Creating "unique" objects with their own functions ******************/
+    function Circle(radius) {
+      this.radius = radius;
+
+      this.getArea = function () {
+        return Math.PI * Math.pow(this.radius, 2);
+      }
+    }
+
+    //Create "instance" of class, i.e. new execution context
+    var myCircle = new Circle(2);
+    console.log("Area:", myCircle.getArea());
+
+    /*** Creating objects sharing functions **********************************/
+    function CircleProto(radius) {
+      this.radius = radius;
+
+    }
+    //Define function in prototype to share
+    CircleProto.prototype.getArea = function () {
+      return Math.PI * Math.pow(this.radius, 2);
+    }
+
+    var myCircleProto = new CircleProto(2);
+    console.log("Area:", myCircleProto.getArea());
+
+    //See Lecture 49 for more about "this" and "self"
+  </script>
+</body>
+</html>

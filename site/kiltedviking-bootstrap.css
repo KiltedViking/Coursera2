@@ -4,6 +4,7 @@ body {
 }
 
 .container {
+  max-width: 991px;
   color: black;
   background-color: white;
   border-radius: 20px;
@@ -14,13 +15,4 @@ footer {
   border-top: solid 1px gray;
   text-align: center;
   font-size: .8em;
-}
-
-.panel-primary {
-  border-color: #800000;
-}
-
-.panel-primary>.panel-heading {
-  background-color: #800000;
-  border-color: #800000;
 }
